@@ -84,7 +84,6 @@ const check_arbitrage = async ( block_number, fromToken, toToken, flashswap ) =>
 
     const pairAddress = await sushiFactory.methods.getPair(fromToken.address, toToken.address).call();
 
-    console.log(pairAddress);
     let tokenIn, tokenOut;
     if (fromToken.address === WMATIC) {
         tokenIn = fromToken.address;
