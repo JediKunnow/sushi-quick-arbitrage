@@ -52,20 +52,15 @@ const quickFactory = new web3.eth.Contract(
 
 const do_log = process.env.LOG;
 
-const WBNB = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
+const WMATIC = '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270';
 
 const fromToken = {
-    symbol:'WBNB',
-    address: WBNB,
+    symbol:'WMATIC',
+    address: WMATIC,
     decimals: 18
 };
 
 const toTokens = [
-    {
-        symbol:'WMATIC',
-        address: "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
-        decimals: 18
-    },
     {
         symbol:'FISH',
         address: "0x3a3df212b7aa91aa0402b9035b098891d276572b",
@@ -89,13 +84,14 @@ const check_arbitrage = async ( block_number, fromToken, toToken, flashswap ) =>
 
     const pairAddress = await sushiFactory.methods.getPair(fromToken.address, toToken.address).call();
 
+    console.log(pairAddress);
     let tokenIn, tokenOut;
-    if (fromToken.address === WBNB) {
+    if (fromToken.address === WMATIC) {
         tokenIn = fromToken.address;
         tokenOut = toToken.address;
     }
 
-    if (toToken.address === WBNB) {
+    if (toToken.address === WMATIC) {
         tokenIn = toToken.address;
         tokenOut = fromToken.address;
     }
