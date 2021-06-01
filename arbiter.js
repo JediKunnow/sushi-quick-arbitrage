@@ -70,6 +70,11 @@ const toTokens = [
         symbol:'USDC',
         address: "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
         decimals: 18
+    },
+    {
+        symbol:'WETH',
+        address: "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+        decimals: 18
     }
 ];
 
