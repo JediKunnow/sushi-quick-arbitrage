@@ -233,9 +233,9 @@ const init = async () => {
         if(start_block == -1)
             start_block = block.number;
         last_block = block.number
-        if(do_log == 1 && deep_log == 1){
+        /*if(do_log == 1 && deep_log == 1){
             log(`\n[BLOCK] ${block.number}`);
-        }
+        }*/
         toTokens.forEach( toToken => check_arbitrage( block.number, fromToken, toToken, flashswap));
         
         
