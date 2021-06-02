@@ -161,7 +161,7 @@ const check_arbitrage = async ( block_number, fromToken, toToken, flashswap ) =>
                 tokenIn,
                 tokenOut,
                 0,
-                amount1.toNumber()
+                amount1
             );
                 
             const [gasPrice, gasCost] = await Promise.all([
